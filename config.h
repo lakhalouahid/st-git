@@ -6,6 +6,11 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "DejaVu Sans Mono:pixelsize=15:antialias=true:autohint=true";
+/* Spare fonts */
+static char *font2[] = {
+	  "Hack Nerd Font:pixelsize=15:antialias=true:autohint=true",
+	  "Symbola:pixelsize=15:antialias=true:autohint=true",
+};
 static int borderpx = 0;
 
 /*
