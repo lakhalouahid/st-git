@@ -24,7 +24,7 @@ static int borderpx = 1;
 static char *shell = "/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
-char *scroll = "/usr/local/bin/scroll";
+char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -105,28 +105,37 @@ float alphaUnfocus;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-  "#cc241d",
-  "#98971a",
-  "#d79921",
-  "#458588",
-  "#b16286",
-  "#689d6a",
-  "#a89984",
-  "#928374",
-  "#fb4934",
-  "#b8bb26",
-  "#fabd2f",
-  "#83a598",
-  "#d3869b",
-  "#8ec07c",
-  "#ebdbb2",
+  "#1f2335",
+  "#24283b",
+  "#292e42",
+  "#414868",
+  "#c0caf5",
+  "#a9b1d6",
+  "#3b4261",
+  "#545c7e",
+  "#737aa2",
+  "#3d59a1",
+  "#7aa2f7",
+  "#2ac3de",
+  "#0db9d7",
+  "#89ddff",
+  "#394b70",
+  "#bb9af7",
+  "#ff007c",
+  "#9d7cd8",
+  "#ff9e64",
+  "#e0af68",
+  "#9ece6a",
+  "#73daca",
+  "#41a6b5",
+  "#1abc9c",
+  "#f7768e",
+  "#db4b4b",
   [255] = 0,
-  /* more colors can be added after 255 to use with DefaultXX */
   "#add8e6", /* 256 -> cursor */
   "#555555", /* 257 -> rev cursor*/
-  "#282828", /* 258 -> bg */
-  "#ebdbb2", /* 259 -> fg */
+  "#16161e", /* 258 -> bg */
+  "#a9b1d6", /* 259 -> fg */
 };
 
 
