@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Hack:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = {
   "JoyPixels:pixelsize=14:antialias=true:autohint=true",
   "Hack Nerd Font:pixelsize=14:antialias=true:autohint=true",
@@ -147,6 +147,8 @@ unsigned int background = 258;
  * 7: Snowman ("☃")
  */
 static unsigned int cursorshape = 2;
+static unsigned int cursorstyle = 1;
+static Rune stcursor = 0x2603; /* snowman ("â˜ƒ") */
 
 /*
  * Default columns and rows numbers
@@ -200,9 +202,9 @@ static Shortcut shortcuts[] = {
  	{ MODKEY,               XK_Return,      fullscreen,     {.i =  0} },
   { ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
   { XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-  { ControlMask | ShiftMask,              XK_N,       zoom,           {.f = +1} },
-  { ControlMask | ShiftMask,              XK_B,        zoom,           {.f = -1} },
-  { ControlMask | ShiftMask,              XK_Home,        zoomreset,      {.f =  0} },
+  { ControlMask | ShiftMask,              XK_plus,       zoom,           {.f = +1} },
+  { ControlMask,              XK_minus,        zoom,           {.f = -1} },
+  { ControlMask,              XK_equal,        zoomreset,      {.f =  0} },
   { TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
   { TERMMOD,              XK_V,           clippaste,      {.i =  0} },
   { TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
@@ -351,8 +353,6 @@ static Key key[] = {
   { XK_Insert,        XK_ANY_MOD,     "\033[2~",      +1,    0},
   { XK_Delete,        ControlMask,    "\033[M",       -1,    0},
   { XK_Delete,        ControlMask,    "\033[3;5~",    +1,    0},
-  { XK_Delete,        ShiftMask,      "\033[2K",      -1,    0},
-  { XK_Delete,        ShiftMask,      "\033[3;2~",    +1,    0},
   { XK_Delete,        XK_ANY_MOD,     "\033[P",       -1,    0},
   { XK_Delete,        XK_ANY_MOD,     "\033[3~",      +1,    0},
   { XK_BackSpace,     XK_NO_MOD,      "\177",          0,    0},
